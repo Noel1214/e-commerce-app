@@ -1,0 +1,9 @@
+# Node modules
+Frontend/node_modules/
+backend/node_modules/
+
+# Environment variables
+
+# Build outputs
+dist/
+build/
