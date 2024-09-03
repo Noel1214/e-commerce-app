@@ -21,11 +21,6 @@ const useSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
-    address: {
-        street: { type: String },
-        city: { type: String },
-        state: { type: String },
-    },
     phone: {
         type: String,
         trim: true
