@@ -7,15 +7,21 @@ const cookieParser = require('cookie-parser');
 // Utils 
 const connectDB = require('./config/db.js');
 
+// importing routers 
+const userRouter = require('./routes/userRoute.js');
+
 // Configurations
-const app = express();
 dotenv.config(); // envoriment variables configurations
 connectDB(); // database connection function
+const app = express();
 
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// setting routes 
+app.use('/api/user', userRouter);
 
 
 // Getting port and listening function
