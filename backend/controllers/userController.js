@@ -86,7 +86,7 @@ const userLogin = asyncHandler(async (req, res) => {
     console.log(error.message);
     res
       .status(500)
-      .json({ message: "error ouccurred while processing the request" });
+      .json({ message: "error ouccurred while processing the login request" });
   }
 
 });
