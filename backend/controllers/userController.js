@@ -9,7 +9,7 @@ const createUser = asyncHandler(async (req, res) => {
 
   // checking whether all fields are there
   if (!username || !email || !password || !phoneNumber) {
-    return res.status(404).json({message: "Please fill all details"});
+    return res.status(404).json({ message: "Please fill all details" });
   }
 
   // checking whether user aldready exists or not
@@ -50,17 +50,14 @@ const userLogin = asyncHandler(async (req, res) => {
   if (!email || !password) {
     return res.status(400).send("Please enter valid credentials");
   }
-  
-  try {
 
-    // getting user if signed up 
+  try {
+    // getting user if signed up
     const userDetails = await User.findOne({ email });
     if (!userDetails) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    
-    
     // comparing passwords and validating
     const isPasswordCorrect = await bcrypt.compare(
       password,
@@ -70,25 +67,19 @@ const userLogin = asyncHandler(async (req, res) => {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
-    
     res.cookie("authToken", userDetails.generateAuthToken(), {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      maxAge: 3600000
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 3600000,
     });
 
-    console.log("Sda");
-    res.status(200).json({message: "login successfull"});
-
-
+    res.status(200).json({ message: "login successfull" });
   } catch (error) {
-
     console.log(error.message);
     res
       .status(500)
       .json({ message: "error ouccurred while processing the login request" });
   }
-
 });
 
 module.exports = { createUser, userLogin };
