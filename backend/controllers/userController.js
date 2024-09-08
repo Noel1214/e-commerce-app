@@ -9,7 +9,7 @@ const createUser = asyncHandler(async (req, res) => {
 
   // checking whether all fields are there
   if (!username || !email || !password || !phoneNumber) {
-    throw new Error("Please fill all details");
+    return res.status(404).json({message: "Please fill all details"});
   }
 
   // checking whether user aldready exists or not
