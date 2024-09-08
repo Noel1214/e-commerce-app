@@ -82,4 +82,13 @@ const userLogin = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { createUser, userLogin };
+const userLogout = asyncHandler(async (req, res) => {
+  res.clearCookie('authToken', {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+  })
+
+  res.status(200).json({message: "logout successfull"})
+})
+
+module.exports = { createUser, userLogin, userLogout };
