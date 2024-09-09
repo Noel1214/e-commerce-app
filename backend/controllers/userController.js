@@ -29,7 +29,7 @@ const createUser = asyncHandler(async (req, res) => {
     userName: username,
     password: hashedPassword,
     email: email,
-    phone: phoneNumber,
+    phoneNumber: phoneNumber,
   });
 
   try {
@@ -37,8 +37,8 @@ const createUser = asyncHandler(async (req, res) => {
     await newUser.save();
     res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).send("user creation failed");
     console.log("user creation failed");
+    res.status(400).send("user creation failed");
   }
 });
 
@@ -67,6 +67,7 @@ const userLogin = asyncHandler(async (req, res) => {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
+    // setting cookie in client side called authToken with userId encoded in it
     res.cookie("authToken", userDetails.generateAuthToken(), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
@@ -82,7 +83,10 @@ const userLogin = asyncHandler(async (req, res) => {
   }
 });
 
+// Logout logic - userLogout
 const userLogout = asyncHandler(async (req, res) => {
+
+  // simply clearing cookie for authentication
   res.clearCookie('authToken', {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -91,4 +95,27 @@ const userLogout = asyncHandler(async (req, res) => {
   res.status(200).json({message: "logout successfull"})
 })
 
-module.exports = { createUser, userLogin, userLogout };
+// Logic to edit user details - editUserDetails
+const editUserDetails = asyncHandler(async (req, res) => {
+  const { username, email, phoneNumber} = req.body;
+
+  // getting user to edit from id comming from params
+  const userToUpdate = await User.findById(req.params.id);
+
+  // checking if user exists if exist then updating corresponding data
+  if(userToUpdate) {
+    userToUpdate.userName = username || userToUpdate.userName;
+    userToUpdate.email = email || userToUpdate.email;
+    userToUpdate.phoneNumber = phoneNumber || userToUpdate.phoneNumber;
+    
+    // saving changes in database
+    await userToUpdate.save();   
+    
+    res.status(200).json({message: "update successfull"});
+  } else {
+    console.log("could not find user to be updated");
+    res.status(401).json({message: "failed to update user"});
+  }
+});
+
+module.exports = { createUser, userLogin, userLogout, editUserDetails };
