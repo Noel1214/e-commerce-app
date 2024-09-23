@@ -1,8 +1,11 @@
 import React from 'react'
+import SlideBar from '@/components/SlideBar'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <SlideBar />
+    </div>
   )
 }
 
