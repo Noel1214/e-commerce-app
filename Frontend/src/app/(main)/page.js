@@ -2,8 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='relative flex flex-col'>
-    </div>
+    <div className=''>I am page in main</div>
   )
 }
 
