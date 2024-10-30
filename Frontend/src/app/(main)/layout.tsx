@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
 import SlideBar from "@/components/SlideBar";
+import '../globals.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="relative flex">
-          <div className="fixed">
+          <div className="absolute">
             <SlideBar />
           </div>
-          <div className="ml-[5rem] p-1">
+          <div className="ml-[5rem] p-2">
             {children}
           </div>
         </div>
