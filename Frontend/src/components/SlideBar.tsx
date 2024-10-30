@@ -1,24 +1,29 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { AiOutlineHome } from "react-icons/ai";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { MdFavoriteBorder } from "react-icons/md";
 import { CiUser } from "react-icons/ci";
-
+import { usePathname } from 'next/navigation';
 
 const SlideBar = () => {
 
+    // const route = usePathname();
+    // console.log(route);
+
     const [isMouseHovering, setisMouseHovering] = useState<boolean>(false);
+    const [islogin, setislogin] = useState<boolean>(false);
 
     const onMouseHoverHandler = (isHovering: boolean): void => {
 
         setisMouseHovering(isHovering)
     }
+    
 
     return (
-        <div id='parent-nav' className={`bg-black text-white h-[100vh] w-[5rem] hover:w-[19rem] transition-all duration-500 ease-in-out shadow-slate-800 shadow-2xl font-semibold text-lg`} onMouseLeave={() => onMouseHoverHandler(false)} onMouseEnter={() => onMouseHoverHandler(true)}>
-            <nav className=''>
+        <div id='parent-nav' className={`bg-black text-white h-[100vh] w-[5rem] hover:w-[19rem] transition-all duration-500 ease-in-out shadow-slate-500 shadow-2xl font-semibold text-lg`} onMouseLeave={() => onMouseHoverHandler(false)} onMouseEnter={() => onMouseHoverHandler(true)}>
+            <nav className=''>  
                 <ul className='flex flex-col justify-center gap-14 absolute top-12 left-7'>
                     <li className='flex gap-5 h-[2rem] hover:scale-110 transition-all duration-300 ease-in-out'>
                         <AiOutlineHome size={26} />
