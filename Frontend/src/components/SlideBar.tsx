@@ -5,22 +5,15 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { MdFavoriteBorder } from "react-icons/md";
 import { CiUser } from "react-icons/ci";
-import { usePathname } from 'next/navigation';
 
 const SlideBar = () => {
 
-    // const route = usePathname();
-    // console.log(route);
-
     const [isMouseHovering, setisMouseHovering] = useState<boolean>(false);
-    const [islogin, setislogin] = useState<boolean>(false);
 
     const onMouseHoverHandler = (isHovering: boolean): void => {
-
         setisMouseHovering(isHovering)
     }
     
-
     return (
         <div id='parent-nav' className={`bg-black text-white h-[100vh] w-[5rem] hover:w-[19rem] transition-all duration-500 ease-in-out shadow-slate-500 shadow-2xl font-semibold text-lg`} onMouseLeave={() => onMouseHoverHandler(false)} onMouseEnter={() => onMouseHoverHandler(true)}>
             <nav className=''>  
