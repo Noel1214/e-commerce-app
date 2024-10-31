@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import SlideBar from "@/components/SlideBar";
 import '../globals.css';
+import SmallScreenNavBar from "@/components/SmallScreenNavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative flex">
-          <div className="absolute">
+        <div className="relative flex flex-col lg:flex-row">
+          <div className="hidden sm:flex sm:absolute">
             <SlideBar />
           </div>
-          <div className="ml-[5rem] p-2">
+          <div id="sd" className="sm:hidden">
+            <SmallScreenNavBar />
+          </div>
+          <div className="ml-0 sm:ml-[5rem] p-2">
             {children}
           </div>
         </div>
