@@ -1,8 +1,17 @@
 import React from 'react'
+import { IoClose } from "react-icons/io5";
 
-const SmallScreenSlider = () => {
+const SmallScreenSlider = ({ setshowSlideBar }) => {
+
+    const toggleShowSlideBar = () => {
+        setshowSlideBar((prev: boolean) => !prev);
+    }
+
     return (
-        <div className=''>
+        <div className='relative'>
+            <div className='absolute top-[1.6rem] right-[1.5rem]' onClick={toggleShowSlideBar}>
+                <IoClose size={35} />
+            </div>
             <nav className='h-screen w-screen bg-black flex justify-center'>
                 <ul className='text-3xl mt-[9rem] flex flex-col gap-5'>
                     <li>Home</li>
