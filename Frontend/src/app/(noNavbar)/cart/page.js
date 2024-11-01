@@ -1,9 +1,10 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import CartItemCard from "@/components/CartItemCard";
 
 const page = () => {
   return (
-    <div className="h-[100vh] w-[100vw]">
+    <div className="min-h-[100vh] max-w-[100vw]">
       <div className="h-[6rem] flex">
         <div className="w-full mx-5 sm:m-[3rem] flex items-center justify-between">
           <h1 className="text-white font-semibold text-[2rem] sm:text-5xl">
@@ -14,6 +15,9 @@ const page = () => {
             <button>Continue Shopping</button>
           </div>
         </div>
+      </div>
+      <div className="min-h-[50vh] p-2 flex flex-col items-center gap-8 mt-8">
+        <CartItemCard />
       </div>
     </div>
   );
