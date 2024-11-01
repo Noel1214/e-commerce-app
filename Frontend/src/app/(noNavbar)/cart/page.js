@@ -17,7 +17,8 @@ const page = () => {
         </div>
       </div>
       <div className="min-h-[50vh] p-2 flex flex-col items-center gap-8 mt-8">
-        <CartItemCard />
+        <CartItemCard image="./shoes.jpg" />
+        <CartItemCard image="./suitcase.jpg" />
       </div>
     </div>
   );
