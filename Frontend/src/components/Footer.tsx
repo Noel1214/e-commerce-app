@@ -59,7 +59,7 @@ const page = () => {
                     <h1 className="text-xl font-bold">Suggestions</h1>
                     <div className="text-sm font-semibold flex flex-col gap-1 mt-4">
                         <div className="flex items-center justify-center gap-2 w-[13rem] bg-white rounded-lg">
-                            <input type="text" className="outline-none text-black h-[2rem] w-[10rem] p-2" />
+                            <input type="text" className="outline-none text-black h-[2rem] w-[10rem] p-2 text-sm" placeholder="write up anything" />
                             <button className="text-orange-400 w-[2rem] p-2">
                                 <FaArrowRight size={19} />
                             </button>
