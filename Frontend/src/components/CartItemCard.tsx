@@ -2,15 +2,15 @@ import React from 'react'
 
 const CartItemCard = ({image}) => {
     return (
-        <div className='bg-zinc-900 w-[70vw] rounded-lg overflow-hidden'>
+        <div className='bg-zinc-900 w-[68vw] rounded-lg overflow-hidden'>
             <div className='flex text'>
-                <div className='border-r-2 border-zinc-700'>
+                <div className='shrink-0 border-r-2 border-zinc-700'>
                     <img className='h-[13rem] w-[14rem] object-cover shrink-0' src={`${image}`} alt="" />
                 </div>
-                <div className='flex justify-between mx-10 mt-10 w-[70%]'>
+                <div className='flex justify-between mx-8 mt-10 w-[40rem]'>
                     <div className='w-[10rem] overflow-hidden flex flex-col items-center gap-3 text-center'>
                         <div>
-                            <h1 className='text-xl'>Nikes</h1>
+                            <h1 className='text-xl'>Nike</h1>
                         </div>
                         <div>
                             <h1 className='text-xs'>Product id:</h1>
