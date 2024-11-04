@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 const page = () => {
     return (
         <div className="min-h-[50vh] w-screen bg-zinc-950 flex flex-col items-center gap-10">
-            <div className="flex justify-evenly pt-7 w-full">
+            <div className="flex flex-col items-center gap-9 sm:flex-row sm:gap-0 justify-evenly pt-7 w-full">
                 <div className="flex flex-col gap-3 items-center w-[20rem]">
                     <div className="h-[2.5rem] w-[2.5rem] rounded-full p-3 flex items-center justify-center bg-orange-500">
                         <FaPhone size={23} />
@@ -30,7 +30,7 @@ const page = () => {
             <div className="w-[90vw]">
                 <hr />
             </div>
-            <div className="flex justify-between w-[80vw]">
+            <div className="flex flex-col sm:flex-row gap-8 items-center justify-between w-[80vw]">
                 <div>
                     <h1 className="text-xl font-bold">About Us</h1>
                     <div className="text-sm font-semibold flex flex-col items-center gap-1 mt-2">
@@ -56,8 +56,8 @@ const page = () => {
                     </div>
                 </div>
                 <div>
-                    <h1 className="text-xl font-bold">Suggestions</h1>
-                    <div className="text-sm font-semibold flex flex-col gap-1 mt-4">
+                    <h1 className="text-xl font-bold text-center sm:text-start  ">Suggestions</h1>
+                    <div className="text-sm font-semibold flex flex-col items-center sm:items-start gap-1 mt-4">
                         <div className="flex items-center justify-center gap-2 w-[13rem] bg-white rounded-lg">
                             <input type="text" className="outline-none text-black h-[2rem] w-[10rem] p-2 text-sm" placeholder="write up anything" />
                             <button className="text-orange-400 w-[2rem] p-2">
@@ -68,10 +68,9 @@ const page = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-5">
+            <div className="mt-4 mb-8">
                 <h1>© 2024 Noel Private.Ltd. All rights Reserved</h1>
             </div>
-            <div></div>
         </div>
     );
 };
