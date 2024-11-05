@@ -6,8 +6,7 @@ import { IoMenu } from "react-icons/io5";
 const SmallScreenNavBar = () => {
 
     const [showSlideBar, setshowSlideBar] = useState(false);
-    console.log(showSlideBar);
-
+    
     const toggleShowSlideBar = () => {
         setshowSlideBar((prev) => !prev)
 
@@ -26,7 +25,7 @@ const SmallScreenNavBar = () => {
                 </div>
 
             </div>
-            <div className={`absolute h-screen w-screen top-0 left-0 transition-all ease-in-out duration-700 -translate-x-[26rem] ${showSlideBar ? "translate-x-0" : ""}`} style={{ willChange: "transform" }}>
+            <div className={`absolute h-screen w-screen top-0 transition-all ease-in-out duration-700 ${showSlideBar ? "left-[0rem]" : "-left-[33rem]"}`} style={{ willChange: "transform" }}>
                 <SmallScreenSlider setshowSlideBar={setshowSlideBar} />
             </div>
         </div>
