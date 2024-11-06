@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const page = () => {
     return (
-        <div className="min-h-[50vh] w-screen bg-zinc-950 flex flex-col items-center gap-10">
+        <div className="min-h-[50vh] w-screen bg-zinc-900 flex flex-col items-center gap-10">
             <div className="flex flex-col items-center gap-9 sm:flex-row sm:gap-0 justify-evenly pt-7 w-full">
                 <div className="flex flex-col gap-3 items-center w-[20rem]">
                     <div className="h-[2.5rem] w-[2.5rem] rounded-full p-3 flex items-center justify-center bg-orange-500">
