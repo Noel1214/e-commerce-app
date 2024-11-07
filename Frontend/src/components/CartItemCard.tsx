@@ -42,8 +42,8 @@ const CartItemCard = ({ image }) => {
                     </div>
                 </div>
             </div>
-            <div>
-
+            <div className='block sm:hidden overflow-x'>
+                <SmallCartItemCard />
             </div>
         </>
     )
