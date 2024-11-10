@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SmallCartItemCard = () => {
+const SmallCartItemCard = ({image}) => {
   return (
     <div className='bg-zinc-900 flex flex-col gap-5 items-center w-[83vw] min-h-[50vh] rounded-lg overflow-hidden'>
       <div className='w-full h-auto border-b-2 border-zinc-700'>
-        <img className='w-full h-auto object-cover' src="./shoes.jpg" alt="" />
+        <img className='w-full h-auto object-cover' src={`${image}`} alt="" />
       </div>
       <div className='w-full flex flex-col gap-7 px-5 font-semibold'>
         <div className='flex flex-col gap-3'>
