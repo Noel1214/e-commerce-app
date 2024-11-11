@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="relative flex flex-col lg:flex-row">
-          <div className="hidden sm:flex sm:absolute">
+          <div className="hidden sm:flex sm:fixed">
             <SlideBar />
           </div>
           <div id="sd" className="sm:hidden">
