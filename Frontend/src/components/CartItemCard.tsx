@@ -1,7 +1,7 @@
 import React from 'react'
 import SmallCartItemCard from './SmallCartItemCard'
 
-const CartItemCard = ({ image }) => {
+const CartItemCard = ({ image }: any) => {
     return (
         <>
         {/* For Large Screens */}
